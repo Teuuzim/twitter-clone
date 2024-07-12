@@ -34,14 +34,14 @@
   line-height: 1.25;
 }
 
-.tweet .tweet-content .tweet-content-header {
+.tweet .tweet-content .tweet-content-footer {
   display: flex;
   align-items: center;
   gap: 3rem;
   margin-top: 0.75rem;
 }
 
-.tweet .tweet-content .tweet-content-header button {
+.tweet .tweet-content .tweet-content-footer button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -51,11 +51,11 @@
   color: #89a2b8;
 }
 
-.tweet .tweet-content .tweet-content-header button:hover{
+.tweet .tweet-content .tweet-content-footer button:hover{
   color: var(--twitter-blue);
 }
 
-.tweet .tweet-content .tweet-content-header button svg{
+.tweet .tweet-content .tweet-content-footer button svg{
   width: 1.25rem;
   height: 1.25rem;
 }
