@@ -1,7 +1,11 @@
 import { ArrowsClockwise, ChatCircle, Heart } from 'phosphor-react'
 import './Tweet.css'
 
-export function Tweet() {
+interface TweetProps {
+  content : string
+}
+
+export function Tweet(props: TweetProps) {
   return (
     <a href="#" className='tweet'>
       <img src="https://github.com/Teuuzim.png" alt='Matheus Vaz'/>
@@ -11,9 +15,7 @@ export function Tweet() {
           <span>@MaatheeusVaaz</span>
         </div>
 
-        <p>
-        Node.js 22: 🚀 V8 atualizado, otimizações de performance e garbage collection, sistema de permissões experimental, suporte a import assertions, API de testes melhorada, top-level await, pattern matching e melhorias no sistema de arquivos. Mais seguro e eficiente! #NodeJS #Update
-        </p>
+        <p>{props.content}</p>
         <div className="tweet-content-footer">
           <button type='button'>
             <ChatCircle />
