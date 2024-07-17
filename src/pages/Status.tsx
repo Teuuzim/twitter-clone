@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import { Tweet } from "../components/Tweet";
 
 import './Status.css'
+import ReactTextareaAutosize from "react-textarea-autosize";
 
 const answers = [
   "Esta certo!",
@@ -24,7 +25,7 @@ export default function Status() {
             src="https://github.com/Teuuzim.png"
             alt="Matheus Henrique Vaz"
           />
-          <textarea id="tweet" placeholder="Tweet your answer" />
+          <ReactTextareaAutosize id="tweet" placeholder="Tweet your answer" />
         </label>
         <button type="submit">Answer</button>
       </form>

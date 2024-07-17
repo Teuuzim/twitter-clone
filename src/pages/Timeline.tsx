@@ -1,3 +1,4 @@
+import ReactTextareaAutosize from "react-textarea-autosize";
 import Header from "../components/Header";
 import Separator from "../components/Separator";
 import { Tweet } from "../components/Tweet";
@@ -21,7 +22,7 @@ export function Timeline() {
             src="https://github.com/Teuuzim.png"
             alt="Matheus Henrique Vaz"
           />
-          <textarea id="tweet" placeholder="What's happening" />
+          <ReactTextareaAutosize id="tweet" placeholder="What's happening" />
         </label>
         <button type="submit">Tweet</button>
       </form>
