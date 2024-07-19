@@ -1,4 +1,4 @@
-# ⚛️ Masterclass de React + TypeScript + Vite
+# ⚛️ Twitter Clone with REACT 
 
 ## Sobre 
 
