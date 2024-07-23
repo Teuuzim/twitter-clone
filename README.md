@@ -10,6 +10,7 @@ Você pode conferir o projeto funcionando aqui:
 
 <!--START_SECTION:footer-->
 
+## SPA application - not SSR
 <br />
 <br />
 
