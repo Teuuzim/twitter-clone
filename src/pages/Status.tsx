@@ -1,10 +1,10 @@
 import Separator from "../components/Separator";
 import Header from "../components/Header";
 import { Tweet } from "../components/Tweet";
+import ReactTextareaAutosize from "react-textarea-autosize";
+import { FormEvent, KeyboardEvent, useState } from "react";
 
 import "./Status.css";
-import ReactTextareaAutosize from "react-textarea-autosize";
-import { FormEvent, useState } from "react";
 
 export default function Status() {
   const [newAnswers, setNewAnswers] = useState("");
@@ -18,6 +18,13 @@ export default function Status() {
     event.preventDefault();
     setAnswers([newAnswers, ...answers]);
     setNewAnswers(""); // react reagindo as alteracoes que eu fiz na variavel
+  }
+
+  function handleHotKeySubmit(event: KeyboardEvent) {
+    if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) {
+      setAnswers([newAnswers, ...answers]);
+      setNewAnswers("");
+    }
   }
 
   return (
@@ -39,6 +46,7 @@ export default function Status() {
           <ReactTextareaAutosize
             id="tweet"
             value={newAnswers}
+            onKeyDown={handleHotKeySubmit}
             onChange={(event) => {
               setNewAnswers(event.target.value);
             }}

@@ -2,11 +2,9 @@ import ReactTextareaAutosize from "react-textarea-autosize";
 import Header from "../components/Header";
 import Separator from "../components/Separator";
 import { Tweet } from "../components/Tweet";
+import { FormEvent, useState, KeyboardEvent } from "react";
 
 import "./Timeline.css";
-import { FormEvent, useState } from "react";
-
-let newTweet = "";
 
 export function Timeline() {
   const [newTweet, setNewTweet] = useState("");
@@ -18,8 +16,15 @@ export function Timeline() {
 
   function createNewTweet(event: FormEvent) {
     event.preventDefault();
-    setTweets([newTweet, ...tweets]);
-    setNewTweet(""); // react reagindo as alteracoes que eu fiz na variavel
+    setTweets([newTweet, ...tweets]); // react reagindo as alteracoes que eu fiz na variavel
+    setNewTweet("");
+  }
+
+  function handleHotKeySubmit(event: KeyboardEvent) {
+    if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) {
+      setTweets([newTweet, ...tweets]);
+      setNewTweet("");
+    }
   }
 
   return (
@@ -36,6 +41,7 @@ export function Timeline() {
             id="tweet"
             value={newTweet}
             placeholder="What's happening"
+            onKeyDown={handleHotKeySubmit}
             onChange={(event) => {
               setNewTweet(event.target.value);
             }}
